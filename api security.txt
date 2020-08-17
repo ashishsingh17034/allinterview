@@ -1,0 +1,42 @@
+Basic auth(base 64) should not be there in API tokens
+
+Test The Accessibility
+Accessibility includes authentication and authorization. You decide who will get the accessibility and how much accessibility is allowed to an authenticated person.
+
+
+Test The Session Management
+Testing the session management involves multiple actions such as expiry time of the session after a certain idle period, maximum lifetime of termination, session end time after a user logs out and others.
+
+
+Use Max Retry and jail features(we can use capcha) in Login.
+
+Use encryption on all sensitive data(uname/pswd).
+
+
+Don't store sensitive data in the JWT payload, it can be decoded easily.
+
+Always validate redirect_uri server-side to allow only whitelisted URLs.
+
+Limit requests (Throttling) to avoid DDoS / brute-force attacks.
+
+Use HTTPS on server side to avoid MITM (Man in the Middle Attack).
+
+
+
+Use HSTS header with SSL to avoid SSL Strip attack.
+
+Use the proper HTTP method according to the operation: GET (read), POST (create), PUT/PATCH (replace/update), and DELETE (to delete a record), and respond with 405 Method Not Allowed if the requested method isn't appropriate for the requested resource.
+
+Validate content-type on request Accept header (Content Negotiation) to allow only your supported format (e.g. application/xml, application/json, etc.) and respond with 406 Not Acceptable response if not matched.
+
+Validate user input to avoid common vulnerabilities (e.g. XSS, SQL-Injection, Remote Code Execution, etc.).
+
+Don't use any sensitive data (credentials, Passwords, security tokens, or API keys) in the URL, but use standard Authorization header.
+
+
+vo5
+vo6{}
+
+
+
+
